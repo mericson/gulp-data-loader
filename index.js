@@ -27,8 +27,28 @@ module.exports = function(data, opt) {
     var keyName = opt.stripExt ? file.path.replace(/\.\w+$/,'') : file.path;
     console.log( 'now i am here')
 
-         data[ keyName ] = file.contents.toString();
+    if ( opt.parseData ) {
+      console.log( 'now i am parsing data here')
 
+      var ext = getExtension( file.path );
+      console.log( ext );
+
+      if ( ext === 'json' ) {        
+        console.log( 'start json parse')
+
+        data[ keyName ] = JSON.parse( file.contents.toString() );
+        console.log( 'end json parse')
+
+      } else {
+         data[ keyName ] = file.contents.toString();
+      }
+
+
+    } else {
+            console.log( 'now i am not parsing data here')
+
+         data[ keyName ] = file.contents.toString();
+    }
     console.log( 'i made it all the way here')
    }
 
