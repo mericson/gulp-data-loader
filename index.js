@@ -6,7 +6,9 @@ var gutil = require('gulp-util');
 module.exports = function(data) {
   return es.map(function (file, cb) {
     var keyName = file.path.replace(/\.\w+$/,'');
-    data[ keyName ] = file.contents.toString();
+    if ( file.contents ) {
+       data[ keyName ] = file.contents.toString();
+    }
     cb(null,file);
   });
 };
