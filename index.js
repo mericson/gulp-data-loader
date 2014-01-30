@@ -21,11 +21,9 @@ module.exports = function(data, opt) {
     if ( file.contents ) {
 
     var keyName = file.path.replace( file.base, '' )
-
     var keyName = opt.stripExt ? keyName.replace(/\.\w+$/,'') : keyName;
 
-    console.log( 'file path is ' + file.path );
-    console.log( 'key name is ' + keyName);
+    gutil.log( 'Loading ' + gutil.colors.cyan(file.path)+' to ', gutil.colors.magenta(keyName));
 
     if ( opt.parseData ) {
 
