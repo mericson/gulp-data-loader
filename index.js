@@ -24,6 +24,9 @@ module.exports = function(data, opt) {
 
     var keyName = opt.stripExt ? file.path.replace(/\.\w+$/,'') : file.path;
 
+    var ( 'file path is ' + file.path );
+    var ( 'key name is ' + keyName);
+
     if ( opt.parseData ) {
 
       var ext = getExtension( file.path );
