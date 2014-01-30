@@ -20,7 +20,7 @@ module.exports = function(data, opt) {
 
     if ( file.contents ) {
 
-    var keyName = file.path.replace( file.base )
+    var keyName = file.path.replace( file.base, '' )
 
     var keyName = opt.stripExt ? keyName.replace(/\.\w+$/,'') : keyName;
 
