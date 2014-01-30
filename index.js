@@ -18,12 +18,9 @@ module.exports = function(data, opt) {
 
   return es.map(function (file, cb) {
 
-    console.log( 'data-loader' );
-    console.log( 'cwd:  ' + file.cwd );
-    console.log( 'base: ' + file.base );
-    console.log( 'path: ' + file.path );
-
     if ( file.contents ) {
+
+    var keyName = file.path.replace( file.base )
 
     var keyName = opt.stripExt ? file.path.replace(/\.\w+$/,'') : file.path;
 
