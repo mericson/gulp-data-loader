@@ -9,7 +9,7 @@ module.exports = function(data) {
     if ( file.contents ) {
        data[ keyName ] = file.contents.toString();
     }
-    console.log( data )
+//    console.log( data )
     cb(null,file);
   });
 };
