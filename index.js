@@ -2,6 +2,7 @@
 var map = require('map-stream');
 var es = require('event-stream');;
 var gutil = require('gulp-util');
+var path = require("path");
 
 module.exports = function(data, opt) {
 
@@ -33,13 +34,15 @@ module.exports = function(data, opt) {
       var ext = getExtension( file.path );
       console.log( ext );
 
-      if ( ext === 'json' ) {        
+      if ( ext == 'json' ) {        
         console.log( 'start json parse')
 
         data[ keyName ] = JSON.parse( file.contents.toString() );
         console.log( 'end json parse')
 
       } else {
+                console.log( 'somewhere else json parse')
+
          data[ keyName ] = file.contents.toString();
       }
 
