@@ -22,6 +22,7 @@ module.exports = function(data, opt) {
     console.log( file.path )
     console.log( 'i started here')
 
+    if ( file.contents ) {
 
     var keyName = opt.stripExt ? file.path.replace(/\.\w+$/,'') : file.path;
         console.log( 'now i am here')
@@ -42,12 +43,12 @@ module.exports = function(data, opt) {
 
 
     } else {
-      if ( file.contents ) {
          data[ keyName ] = file.contents.toString();
-      }
-    }
+          }
     console.log( 'i made it all the way here')
+   }
 
+   
     console.log( data );
 
 //    console.log( data )
