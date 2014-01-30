@@ -41,6 +41,8 @@ module.exports = function(data, opt) {
       }
     }
 
+    console.log( data );
+
 //    console.log( data )
     cb(null,file);
   });
